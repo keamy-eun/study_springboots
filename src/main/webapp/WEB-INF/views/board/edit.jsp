@@ -13,16 +13,17 @@
     />
   </head>
   <html lang="en">
-    <body>
-      <div>board/form</div>
-      <form action="/board/form" method="post">
+  <body>
+    <form action="/board/list" method="post">
+      <div>
+        <div>TITLE <input type="text" name="title" id="" /></div>
+        <div>CONTENT <input type="text" name="content" id="" /></div>
+        <div>USERNAME <input type="text" name="userName" id="" /></div>
+        <div>DATE <input type="text" name="date" id="" /></div>
         <div>
-          <input type="text" name="title" id="" />
-          <div>
-            <button type="submit">Submit</button>
-          </div>
+          <button type="submit" class="btn btn-primary">EDIT</button>
         </div>
-      </form>
-    </body>
-  </html>
+      </div>
+    </form>
+  </body>
 </html>

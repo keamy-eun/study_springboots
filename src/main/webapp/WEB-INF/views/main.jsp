@@ -7,8 +7,12 @@
     <title>Document</title>
   </head>
   <body>
-    <div>Main - made by JSP</div>
-    <div>Board</div>
-    <div></div>
+    <div>home - HTML</div>
+    <div>board</div>
+    <div>
+      <a href="/board/form"
+        >/board/form BoardController form() /board/form.jsp</a
+      >
+    </div>
   </body>
 </html>

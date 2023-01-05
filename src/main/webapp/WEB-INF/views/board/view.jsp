@@ -13,16 +13,23 @@
     />
   </head>
   <html lang="en">
-    <body>
-      <div>board/form</div>
-      <form action="/board/form" method="post">
+  <body>
+    <div class="container text-center fs-5">VIEW PAGE</div>
+    <form action="/board/edit" method="get">
+      <div>
+        <input type="hidden" name="edit" id="" />
         <div>
-          <input type="text" name="title" id="" />
-          <div>
-            <button type="submit">Submit</button>
-          </div>
+          <button type="submit" class="btn btn-primary">EDIT</button>
         </div>
-      </form>
-    </body>
-  </html>
+      </div>
+    </form>
+    <form action="/board/list" method="post">
+      <div>
+        <input type="hidden" name="list" id="" />
+        <div>
+          <button type="submit" class="btn btn-primary">LIST</button>
+        </div>
+      </div>
+    </form>
+  </body>
 </html>
