@@ -31,9 +31,7 @@
           <td>
       <form action="/board/edit" method="get">
       <div>
-        <div>
           <button type="submit" class="btn btn-primary">EDIT</button>
-        </div>
       </div>
     </form>
     </td>
@@ -42,10 +40,8 @@
 
     <form action="/board/list" method="post">
       <div>
-        <div>
           <button type="submit" class="btn btn-primary">LIST</button>
         </div>
-      </div>
     </form>
   </body>
 </html>
