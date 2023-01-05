@@ -31,7 +31,6 @@
           <td>
       <form action="/board/edit" method="get">
       <div>
-        <input type="hidden" name="edit" id="" />
         <div>
           <button type="submit" class="btn btn-primary">EDIT</button>
         </div>
@@ -43,7 +42,6 @@
 
     <form action="/board/list" method="post">
       <div>
-        <input type="hidden" name="list" id="" />
         <div>
           <button type="submit" class="btn btn-primary">LIST</button>
         </div>
