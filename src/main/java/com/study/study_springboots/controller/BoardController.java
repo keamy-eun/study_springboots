@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class BoardController {
-    @RequestMapping( value = "/board/list", method = RequestMethod.POST)
+    @RequestMapping( value = {"/board/list","", "/", "/board"}, method = RequestMethod.POST)
     public String list() {
         return "/WEB-INF/views/board/list.jsp";
     }
@@ -21,9 +21,5 @@ public class BoardController {
     @RequestMapping( value = "/board/edit", method = RequestMethod.GET)
     public String edit() {
         return "/WEB-INF/views/board/edit.jsp";
-    }
-    @RequestMapping(value = {"", "/", "/board"}) 
-    public String main(){  
-        return "/WEB-INF/views/board/view.jsp";
     }
 }

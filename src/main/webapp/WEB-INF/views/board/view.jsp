@@ -15,7 +15,21 @@
   <html lang="en">
   <body>
     <div class="container text-center fs-5">VIEW PAGE</div>
-    <form action="/board/edit" method="get">
+      <table class="table table-bordered">
+        <tr>
+          <td>Title</td>
+          <td>Content</td>
+          <td>Name</td>
+          <td>Date</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Metrix</td>
+          <td>fake reality</td>
+          <td>Neo</td>
+          <td>1999-01-01</td>
+          <td>
+      <form action="/board/edit" method="get">
       <div>
         <input type="hidden" name="edit" id="" />
         <div>
@@ -23,6 +37,10 @@
         </div>
       </div>
     </form>
+    </td>
+        </tr>
+      </table>
+
     <form action="/board/list" method="post">
       <div>
         <input type="hidden" name="list" id="" />
