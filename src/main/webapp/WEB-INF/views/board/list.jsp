@@ -30,10 +30,10 @@
               <c:forEach items="${boardBean}" var="board" varStatus="status">
                 <tr>
                   <th scope=>${status.count}</th>
-                  <td><a href="/board/view?uid=Mark">${board.title}</a></td>
-                  <td>${board.content}1</td>
-                  <td>${board.userName}2</td>
-                  <td>${board.date}3</td>
+                  <td><a href="/board/view?uid=${board.title}">${board.title}</a></td>
+                  <td>${board.content}</td>
+                  <td>${board.userName}</td>
+                  <td>${board.date}</td>
                 </tr>
               </c:forEach>
             </tbody>
