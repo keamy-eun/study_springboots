@@ -12,7 +12,6 @@
       crossorigin="anonymous"
     />
   </head>
-  <html lang="en">
   <body>
     <form action="/board/list" method="post">
       <div>

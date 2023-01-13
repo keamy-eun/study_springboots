@@ -7,9 +7,9 @@
     <title>Document</title>
   </head>
   <body>
-    <div>home - HTML</div>
-    <div>board</div>
-    <div><a href="/board/form">/board/form BoardController form() /board/form.jsp</a></div>
-    <div><a href="/board_our/list">/board_our/list BoardController list() /board_our/list.jsp</a></div>
+    <div>prac - UserList</div>
+        <form action="/getUserInfo" method="get">
+        <div><button>go-to-UserInfo</button></div>
+    </form>
   </body>
 </html>

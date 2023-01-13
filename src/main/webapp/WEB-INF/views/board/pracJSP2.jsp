@@ -7,9 +7,10 @@
     <title>Document</title>
   </head>
   <body>
-    <div>home - HTML</div>
-    <div>board</div>
-    <div><a href="/board/form">/board/form BoardController form() /board/form.jsp</a></div>
-    <div><a href="/board_our/list">/board_our/list BoardController list() /board_our/list.jsp</a></div>
+    <div>prac - 회원정보</div>
+        <form action="/getUserList" method="post">
+      <input type="text" name="INFO" id="" />
+        <div><button>go-to-list</button></div>
+    </form>
   </body>
 </html>

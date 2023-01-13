@@ -1,3 +1,6 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,28 +15,50 @@
       crossorigin="anonymous"
     />
   </head>
-  <html lang="en">
     <body>
       <div class="container text-center fs-5">USER LIST</div>
-      <table class="table table-bordered">
-        <tr>
-          <td>Title</td>
-          <td>Content</td>
-          <td>Name</td>
-          <td>Date</td>
-        </tr>
-        <tr>
-          <td>Metrix</td>
-          <td>fake reality</td>
-          <td>Neo</td>
-          <td>1999-01-01</td>
-        </tr>
-      </table>
-      <form action="/board/view" method="get">
-        <div>
-            <button type="submit" class="btn btn-primary">View List</button>
-        </div>
-      </form>
+              <table class="table">
+            <thead>
+                <tr>
+                    <th scope=>#</th>
+                    <th scope=class="col-9">Title</th>
+                    <th scope=>user name</th>
+                    <th scope=>date</th>
+                </tr>
+            </thead>
+            <tbody>
+              <c:forEach items="${boardBean}" var="board" varStatus="status">
+                <tr>
+                  <th scope=>${status.count}</th>
+                  <td><a href="/board/view?uid=Mark">${board.title}</a></td>
+                  <td>${board.content}1</td>
+                  <td>${board.userName}2</td>
+                  <td>${board.date}3</td>
+                </tr>
+              </c:forEach>
+              <%-- <tr>
+                  <th scope=>1</th>
+                  <td><a href="/board/view?uid=Mark">Mark</a></td>
+                  <td>${boardBean.get(0).content}</td>
+                  <td>@mdo</td>
+                  <td>22.11.11</td>
+              </tr>
+              <tr>
+                  <th scope=>2</th>
+                  <td><a href="/board/view?uid=Jacob">Jacob</a></td>
+                  <td>${boardBean.get(1).content}</td>
+                  <td>@fat</td>
+                  <td>22.11.11</td>
+              </tr>
+              <tr>
+                  <th scope=>3</th>
+                  <td><a href="/board/view?uid=Larry">Larry</a></td>
+                  <td>Bird</td>
+                  <td>@twitter</td>
+                  <td>22.11.11</td>
+              </tr> --%>
+            </tbody>
+        </table>
       <form action="/board/form" method="get">
         <div class="mt-3">
             <button type="submit" class="btn btn-primary">Form</button>

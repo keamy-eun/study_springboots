@@ -9,7 +9,7 @@ public class HomeController {
     @RequestMapping(value = {"", "/", "/main"}) //url이 value의 3가지에 포함되면 리턴이 같다
     public String main(){  
         int i = 0;
-        return "WEB-INF/views/main.jsp";
+        return "main";
     }
     @RequestMapping(value = "/home")
     public void home(){  
@@ -18,12 +18,12 @@ public class HomeController {
     @RequestMapping(value = "/homejsp")
     public String homejsp(){  //return에 String만 넣으면 경로로 인식한다
         int i = 0;
-        return "WEB-INF/views/home.jsp";
+        return "home";
     }
     // HTML은 jasper가 인식하지 않는다.
     @RequestMapping(value = "/homehtml")
     public String homehtml(){  
         int i = 0;
-        return "WEB-INF/views/home.html";
+        return "home.html";
     }
 }

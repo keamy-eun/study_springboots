@@ -12,7 +12,6 @@
       crossorigin="anonymous"
     />
   </head>
-  <html lang="en">
   <body>
     <div class="container text-center fs-5">VIEW PAGE</div>
       <table class="table table-bordered">
@@ -21,23 +20,19 @@
           <td>Content</td>
           <td>Name</td>
           <td>Date</td>
-          <td></td>
         </tr>
         <tr>
-          <td>Metrix</td>
-          <td>fake reality</td>
-          <td>Neo</td>
-          <td>1999-01-01</td>
-          <td>
-      <form action="/board/edit" method="get">
-      <div>
-          <button type="submit" class="btn btn-primary">EDIT</button>
-      </div>
-    </form>
-    </td>
+          <td>${boardBean.title}</td>
+          <td>${boardBean.content}</td>
+          <td>${boardBean.userName}</td>
+          <td>${boardBean.date}</td>
         </tr>
       </table>
-
+      <form action="/board/edit" method="get">
+        <div>
+            <button type="submit" class="btn btn-primary">EDIT</button>
+        </div>
+      </form>
     <form action="/board/list" method="post">
       <div>
           <button type="submit" class="btn btn-primary">LIST</button>
