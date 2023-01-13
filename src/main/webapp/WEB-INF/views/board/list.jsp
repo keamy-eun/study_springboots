@@ -36,27 +36,6 @@
                   <td>${board.date}3</td>
                 </tr>
               </c:forEach>
-              <%-- <tr>
-                  <th scope=>1</th>
-                  <td><a href="/board/view?uid=Mark">Mark</a></td>
-                  <td>${boardBean.get(0).content}</td>
-                  <td>@mdo</td>
-                  <td>22.11.11</td>
-              </tr>
-              <tr>
-                  <th scope=>2</th>
-                  <td><a href="/board/view?uid=Jacob">Jacob</a></td>
-                  <td>${boardBean.get(1).content}</td>
-                  <td>@fat</td>
-                  <td>22.11.11</td>
-              </tr>
-              <tr>
-                  <th scope=>3</th>
-                  <td><a href="/board/view?uid=Larry">Larry</a></td>
-                  <td>Bird</td>
-                  <td>@twitter</td>
-                  <td>22.11.11</td>
-              </tr> --%>
             </tbody>
         </table>
       <form action="/board/form" method="get">
