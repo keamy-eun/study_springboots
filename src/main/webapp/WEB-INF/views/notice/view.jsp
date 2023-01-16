@@ -36,6 +36,9 @@
             <form action="/notice/edit/${noticeParams['title']}" method="get">
                 <button>edit</button>
             </form>
+            <form action="/notice/list" method="get">
+                <button>list</button>
+            </form>
         </div>
     </div>
     <script

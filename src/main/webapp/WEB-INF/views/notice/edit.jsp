@@ -13,7 +13,7 @@
   />
 </head>
 <body>
-    <form action="/notice/view" method="post">
+    <form action="/notice/save" method="post">
       <div>
         <label for="title">title : ${newHashMap['title']}</label>
         <input type="text " class="form-control" name="title" id="title" />
@@ -31,7 +31,7 @@
         <input type="date" class="form-control" name="date" id="date" />
       </div>
       <div>
-        <button>view</button>
+        <button>edit</button>
       </div>
       <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"

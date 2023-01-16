@@ -31,11 +31,22 @@ public class NoticeController {
         modelAndView.setViewName("notice/view");
         return modelAndView;
     }
+
+    @RequestMapping( value = {"/", "/list"}, method = RequestMethod.GET)  // /board_our
+    public ModelAndView list(ModelAndView modelAndView) {
+        DataInfors dataInfors = new DataInfors();
+        ArrayList<BoardBean> boardList = dataInfors.getDataListWithBoardBean();
+
+        modelAndView.addObject("boardList", boardList);
+        modelAndView.setViewName("notice/list");
+        return modelAndView;
+    }
+
     @RequestMapping(value = "/save", method = RequestMethod.POST)    
     // public ModelAndView save(@RequestParam HashMap<String, String> params, ModelAndView modelAndView) {
-    public ModelAndView save(BoardBean boardBean, ModelAndView modelAndView) {
-            // insert biz
-        modelAndView.setViewName("notice/list");
+    public ModelAndView save(@RequestParam HashMap<String, String> params, ModelAndView modelAndView) {
+        modelAndView.addObject("noticeParams", params);
+        modelAndView.setViewName("notice/view");
         return modelAndView;
     }
 }
