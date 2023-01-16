@@ -16,31 +16,39 @@
     />
   </head>
   <body>
-    <div class="container">
+    <form action="/board_our/list" method="get">
         <table class="table">
             <thead>
                 <tr>
-                    <th class="col-1" scope=>Title</th>
-                    <td class="col-6">Hello : ${boardBean.title} </td>
-                    <th>user name </th>
-                    <td>Mark : ${boardBean.userName}</td>
-                    <th>date</th>
-                    <td>22.11.11</td>
+                    <th scope=>#</th>
+                    <th scope=class="">Title to NoticeController</th>
+                    <th scope=>user name</th>
+                    <th scope=>date</th>
                 </tr>
             </thead>
             <tbody>
-                <td colspan=6>${boardBean.content}</td>
+                <tr>
+                    <th scope=>1</th>
+                    <td><a href="/notice/edit/Hello">Hello</a></td>
+                    <td>Mark</td>
+                    <td>22.11.11</td>
+                </tr>
+                <tr>
+                    <th scope=>2</th>
+                    <td><a href="/notice/edit/Otto">Otto</a></td>
+                    <td>Marky</td>
+                    <td>22.11.11</td>
+                </tr>
+                <tr>
+                    <th scope=>3</th>
+                    <td><a href="/notice/edit/Jasco">Jasco</a></td>
+                    <td>Mondo</td>
+                    <td>22.11.11</td>
+                </tr>
             </tbody>
         </table>
-        <div>
-            <form action="/board_our/list">
-                <button>go list</button>
-            </form>
-            <form action="/board_our/edit" method="post">
-                <button>edit</button>
-            </form>
-        </div>
-    </div>
+    </form>
+      <a href="/board_our/form">form</a>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"

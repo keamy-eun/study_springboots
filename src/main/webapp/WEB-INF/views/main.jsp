@@ -11,5 +11,11 @@
     <div>board</div>
     <div><a href="/board/form">/board/form BoardController form() /board/form.jsp</a></div>
     <div><a href="/board_our/list">/board_our/list BoardController list() /board_our/list.jsp</a></div>
+    <div><a href="/jstlformats">jstl_formats.jsp</a></div>
+    <div><a href="/notice/form">/notice/form NoticeController form() /notice/form.jsp</a></div>
+    <hr>
+    <div>practice</div>
+    <div><a href="/board_prac/form">/board_prac/form BoardController form() /board_prac/form.jsp</a></div>
+    <div><a href="/board_prac1/form">/board_prac1/form BoardController form() /board_prac1/form.jsp</a></div>
   </body>
 </html>

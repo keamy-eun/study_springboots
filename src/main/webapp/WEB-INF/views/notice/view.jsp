@@ -20,23 +20,20 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th class="col-1" scope=>Title</th>
-                    <td class="col-6">Hello : ${boardBean.title} </td>
+                    <th class="col-1" scope=>Title : ${noticeParams['titile']}</th>
+                    <td class="col-6">  </td>
                     <th>user name </th>
-                    <td>Mark : ${boardBean.userName}</td>
+                    <td> ${noticeParams['userName']} </td>
                     <th>date</th>
-                    <td>22.11.11</td>
+                    <td> ${noticeParams['date']} </td>
                 </tr>
             </thead>
             <tbody>
-                <td colspan=6>${boardBean.content}</td>
+                <td colspan=6> ${noticeParams['content']} </td>
             </tbody>
         </table>
         <div>
-            <form action="/board_our/list">
-                <button>go list</button>
-            </form>
-            <form action="/board_our/edit" method="post">
+            <form action="/notice/edit" method="post">
                 <button>edit</button>
             </form>
         </div>
