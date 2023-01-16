@@ -20,7 +20,7 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th class="col-1" scope=>Title : ${noticeParams['titile']}</th>
+                    <th class="col-1" scope=>Title : ${noticeParams['title']}</th>
                     <td class="col-6">  </td>
                     <th>user name </th>
                     <td> ${noticeParams['userName']} </td>
@@ -33,7 +33,7 @@
             </tbody>
         </table>
         <div>
-            <form action="/notice/edit" method="post">
+            <form action="/notice/edit/${noticeParams['title']}" method="get">
                 <button>edit</button>
             </form>
         </div>

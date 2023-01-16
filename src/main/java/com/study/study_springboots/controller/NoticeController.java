@@ -16,10 +16,9 @@ import com.study.study_springboots.service.DataInfors;
 @Controller
 @RequestMapping( value = "/notice")
 public class NoticeController {
-    @RequestMapping( value = "/edit/{edit_uid}", method = RequestMethod.GET)
+    @RequestMapping( value = {"/edit/{edit_uid}","/edit"}, method = RequestMethod.GET)
     public ModelAndView edit(@PathVariable String edit_uid, ModelAndView modelAndView) {
         DataInfors dataInfors = new DataInfors();
-        ArrayList<BoardBean> makeListInstance = dataInfors.getDataListWithBoardBean();
         HashMap<String,String> newHashMap = dataInfors.getDataByUid(edit_uid);
 
         modelAndView.addObject("newHashMap", newHashMap);

@@ -73,7 +73,8 @@ public class DataInfors {
     }
 
     public HashMap<String,String> getDataByUid(String edit_uid){
-        // edit_uid를 넘겨주고 매칭되는 값을 리턴
+        getDataListWithBoardBean();  //list 인스턴스 생성
+        // edit_uid와 매칭되는 bean값들을 리턴
         int cnt = 0;
         for(int i=0; i<membersList.size(); i++){
             if(membersList.get(i).getTitle().equals(edit_uid)) cnt = i;
