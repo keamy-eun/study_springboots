@@ -1,11 +1,18 @@
 package com.study.study_springboots.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.study.study_springboots.dao.HomeDao;
 
 //Data와 view의 파일이름(경로)만 담는다
 @Controller
 public class HomeController {
+
+    @Autowired
+    HomeDao homeDao;
+
     @RequestMapping(value = {"", "/", "/main"}) //url이 value의 3가지에 포함되면 리턴이 같다
     public String main(){  
         int i = 0;
@@ -14,6 +21,7 @@ public class HomeController {
     }
     @RequestMapping(value = "/home")
     public void home(){  
+        Object result = homeDao.getList();
         int i = 0;
         System.out.println(i);
     }
