@@ -8,4 +8,27 @@
         SELECT COMMON_CODE_ID, NAME, ORDER_NUMBER 
         FROM cip_common_code
     </select>
+
+    <!-- call CommonCode.selectFromCIP_COMMON_CODE -->
+    <select id="selectFromCIP_COMMON_CODE" 
+        parameterType="Map" resultType="Map">
+        SELECT * 
+        FROM CIP_COMMON_CODE
+    </select>
+
+    <!-- call CommonCodeOur.selectByUID -->
+    <select id="selectFromCIP_COMMON_CODEByUID" 
+        parameterType="Map" resultType="Map">
+        SELECT * 
+        FROM CIP_COMMON_CODE
+        WHERE COMMON_CODE_ID = #{COMMON_CODE_ID}
+    </select>
+
+        <!-- call CommonCode.updateCIP_COMMON_CODE -->
+    <update id="updateCIP_COMMON_CODE" 
+        parameterType="Map">
+        UPDATE CIP_COMMON_CODE 
+        SET NAME=#{NAME}, MODIFY_DATE=sysdate()
+        WHERE COMMON_CODE_ID=#{COMMON_CODE_ID}
+    </update>
 </mapper>

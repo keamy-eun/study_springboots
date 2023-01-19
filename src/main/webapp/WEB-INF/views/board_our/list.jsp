@@ -27,7 +27,7 @@
 <%-- firstWithReqeust를 사용하려면 ${firstString},  --%>
     <hr>
     <div class="badge bg-info fs-5">jstl if</div>
-    <%-- <@ if(){} @> --%>
+    <%-- <@ if(){} @>    if문에 else는 없기때문에 else기능은 choose로 사용--%>
     <c:if test="${firstString eq 'firstValue'}"> 
       <h5>Matching : firstString eq 'firstValue'</h5>
     </c:if >

@@ -13,7 +13,8 @@
     <div><a href="/board_our/list">/board_our/list BoardController list() /board_our/list.jsp</a></div>
     <div><a href="/jstlformats">jstl_formats.jsp</a></div>
     <div><a href="/notice/form">/notice/form NoticeController form() /notice/form.jsp</a></div>
-    <div><a href="/commonCode/list">/commonCode/list CommonCodeController list() commonCode/list.jsp</a></div>
+    <div><a href="/commonCode/list">/commonCode/list list() commonCode/list.jsp</a></div>
+    <div><a href="/commonCodeOur/list">/commonCode_our/list list() commonCode_our/list.jsp</a></div>
     <hr>
   </body>
 </html>
