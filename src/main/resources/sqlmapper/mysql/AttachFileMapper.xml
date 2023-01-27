@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="AttachFile">
+    <!-- call AttachFile.selectListByUID -->
+    <select id="selectListByUID" 
+        parameterType="Map" resultType="Map">
+        select *
+        from CIP_ATTACHFILE 
+        where SOURCE_UNIQUE_SEQ = #{SOURCE_UNIQUE_SEQ}
+    </select>
+    
+    <!-- call AttachFile.insertCIP_ATTACHFILE -->
+    <insert id="insertCIP_ATTACHFILE" parameterType="Map">
+        insert into CIP_ATTACHFILE
+        (ATTACHFILE_SEQ, SOURCE_UNIQUE_SEQ, ORGINALFILE_NAME, PHYSICALFILE_NAME, REGISTER_SEQ, REGISTRY_DATE, 
+        MODIFIER_SEQ, MODIFY_DATE)
+        value('2023.01.261244', 'TEMP_29', '새 텍스트 문서.txt', '20230126_112456', 'UUID-1111-1111111',sysdate(),'UUID-1111-1111111',sysdate())
+    </insert>
+
+    <insert id="insertMulti" parameterType="Map">
+        insert into CIP_ATTACHFILE
+        (ATTACHFILE_SEQ, SOURCE_UNIQUE_SEQ, ORGINALFILE_NAME, PHYSICALFILE_NAME, REGISTER_SEQ, REGISTRY_DATE, 
+        MODIFIER_SEQ, MODIFY_DATE)
+        values
+        <foreach collection="attachfiles" item="attachfile" open="(" close=")" separator="),(">
+        #{attachfile.ATTACHFILE_SEQ}, #{attachfile.SOURCE_UNIQUE_SEQ}, #{attachfile.ORGINALFILE_NAME}, #{attachfile.PHYSICALFILE_NAME}, #{attachfile.REGISTER_SEQ},sysdate(),#{attachfile.MODIFIER_SEQ},sysdate()
+        
+        </foreach>
+        <!-- ('2023.01.261247', 'TEMP_29', '새 텍스트 문서.txt', '20230126_112456', 'UUID-1111-1111111',sysdate(),'UUID-1111-1111111',sysdate())
+        ,('2023.01.261245', 'TEMP_29', '새 텍스트 문서01.txt', '20230126_112456', 'UUID-1111-1111111',sysdate(),'UUID-1111-1111111',sysdate()) -->
+    </insert>
+</mapper>

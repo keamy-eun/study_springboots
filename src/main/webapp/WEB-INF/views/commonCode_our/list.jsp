@@ -8,12 +8,18 @@
 <form action="/commonCodeOur/form" method="get">
 	<button class="btn btn-outline-info">Form</button>
 </form>
+<form action="/commonCodeOur/formMulti" method="get">
+	<button class="btn btn-outline-info">FormMulti</button>
+</form>
+<form action="/commonCodeOur/deleteMulti" method="post">
+	<button class="btn btn-info">DeleteMulti</button>
 
 <table class="table table-striped table-hover table-bordered">
 	<thead>
 		<tr class="text-center">
 			<th><input type="checkbox" id="selectall" /></th>
 			<th>코드 ID</th>
+			<th>코드 ID with Files</th>
 			<th>코드명</th>
 			<th>부모 코드 ID</th>
 			<th>delete</th>
@@ -22,10 +28,16 @@
 	<tbody>
 		<c:forEach items="${resultMap}" var="resultData" varStatus="loop">
 			<tr>
-				<td class="text-center"><input type="checkbox" class="checkbox"
-					name="COMMONCODE_ID"  /></td>
+				<td class="text-center">
+				<input type="checkbox" class="checkbox"
+					name="COMMON_CODE_ID" value="${resultData.COMMON_CODE_ID}" /></td>
 				<td>
 					<form action="/commonCodeOur/edit/${resultData.COMMON_CODE_ID}" method="get">
+					<button class="btn btn-link viewPopup">${resultData.COMMON_CODE_ID}</button>
+					</form>
+				</td>
+				<td>
+					<form action="/commonCodeOur/editMulti/${resultData.COMMON_CODE_ID}" method="get">
 					<button class="btn btn-link viewPopup">${resultData.COMMON_CODE_ID}</button>
 					</form>
 				</td>
@@ -47,5 +59,6 @@
 		</c:forEach>
 	</tbody>
 </table>
+</form>
 </div>
 <!-- /.table-responsive -->

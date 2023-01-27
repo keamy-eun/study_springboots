@@ -5,26 +5,31 @@
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
 
 <div class="container">
-<c:set var="form_action" value="update" />
+<c:set var="form_action" value="updateMulti" />
 <c:if test="${empty resultMap}">
-	<c:set var="form_action" value="insert" />
+	<c:set var="form_action" value="insertMulti" />
 </c:if>
-<form action="/commonCodeOur/${form_action}" method="post" enctype = "multipart/form-data">>
+<form action="/commonCodeOur/${form_action}" method="post" enctype = "multipart/form-data">
 <input type="hidden" name="REGISTER_SEQ" value="UUID-1111-1111111">
 <input type="hidden" name="MODIFIER_SEQ" value="UUID-1111-1111111">
 <input type="hidden" name="PARENT_COMMONCODE_ID">
-<input type="hidden" name="PARENT_COMMON_CODE_ID" value="${resultMap.PARENT_COMMON_CODE_ID}"
-	>
-<div class="form-group form-row" >
-<label class="form-label">File Upload</label>
-<input type="file" name="file_first" class="form-controll">
-</div>
+<input type="hidden" name="PARENT_COMMON_CODE_ID" value="${resultMap.PARENT_COMMON_CODE_ID}">
+${resultMap.attachFiles}
+<div>${resultMap}</div>
+<c:forEach items="${resultMap.attachFiles}" var="resultData" varStatus="loop">
+	<div class="form-group form-row" >
+		<label class="form-label">File Upload</label>
+		<input type="file" name="file_${loop.index}" class="form-control">
+		<a href="/files/${resultData.PHYSICALFILE_NAME}/${resultData.ORGINALFILE_NAME}">${resultData.ORGINALFILE_NAME}</a>,
+		<input type="hidden" name="file_${loop.index}" value="${resultData.ATTACHFILE_SEQ}" />
+	</div>
+</c:forEach>
 
 <div class="form-group form-row">
 	<div class="col">
 		<label>코드 ID</label> <input class="form-control" type="text"
 			name="COMMON_CODE_ID" value="${resultMap.COMMON_CODE_ID}"
-			placeholder="TEMPORORY_COMMONCODE" required ${form_action == "insert" ? "" : "readonly"} />
+			placeholder="TEMPORORY_COMMONCODE" required ${form_action == "insertMulti" ? "" : "readonly"} />
 		<div class="invalid-tooltip">
 			
 		</div>

@@ -7,6 +7,7 @@
         parameterType="Map" resultType="Map">
         SELECT * 
         FROM CIP_COMMON_CODE 
+        where ORDER_NUMBER > 0
     </select>
 
     <!-- call CommonCodeOur.selectByUID -->
@@ -37,8 +38,10 @@
     <insert id="insertWithUID" parameterType="Map">
         insert into CIP_COMMON_CODE 
         (COMMON_CODE_ID,NAME,ORDER_NUMBER,ATTRIBUTION_1,ATTRIBUTION_2,DESCRIPTION,
-        SYSTEM_CODE_YN,USE_YN,PARENT_COMMON_CODE_ID,REGISTER_SEQ,REGISTRY_DATE,MODIFIER_SEQ,MODIFY_DATE) 
-        VALUE (#{COMMON_CODE_ID},#{NAME},#{ORDER_NUMBER},#{ATTRIBUTION_1},#{ATTRIBUTION_2},#{DESCRIPTION}
+        SYSTEM_CODE_YN,USE_YN,PARENT_COMMON_CODE_ID,REGISTER_SEQ,REGISTRY_DATE,MODIFY_DATE,MODIFIER_SEQ) 
+        VALUE 
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+        #{COMMON_CODE_ID},#{NAME},#{ORDER_NUMBER},#{ATTRIBUTION_1},#{ATTRIBUTION_2},#{DESCRIPTION}
         <choose>
             <when test="SYSTEM_CODE_YN != null">
                 , 'Yes'
@@ -55,6 +58,24 @@
                 , 'No'
             </otherwise>
         </choose>
-        ,NULL,#{REGISTER_SEQ},sysdate(),#{MODIFIER_SEQ},sysdate())
+        ,NULL,#{REGISTER_SEQ},sysdate(),sysdate(),
+        <if test="MODIFIER_SEQ != null">
+        #{MODIFIER_SEQ},
+        </if>
+        </trim>
     </insert>
+
+    <!-- call CommonCodeOur.deleteMultiByUIDs -->
+    <delete id="deleteMultiByUIDs" 
+        parameterType="Map">
+    DELETE FROM CIP_COMMON_CODE 
+    WHERE COMMON_CODE_ID IN (
+        <!-- 'No', 'System_Code_Yes' -->
+        <foreach collection="deleteMultis" item="item" 
+        separator=", ">
+        #{item}
+        </foreach>
+        )
+    </delete>
+
 </mapper>
